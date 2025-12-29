@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Uxum Grotesque";
+  src: url("/fonts/uxumlight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uxum Grotesque";
+  src: url("/fonts/uxumregular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Uxum Grotesque";
+  src: url("/fonts/uxumbold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background-color: black;
+  font-family: "Uxum Grotesque", sans-serif;
 }
