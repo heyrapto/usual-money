@@ -88,7 +88,7 @@ export default function HeroSection() {
       </div>
 
       {/* Partners Footer */}
-      <div className="absolute bottom-20 left-0 right-0 flex justify-center grayscale opacity-40">
+      <div className="absolute bottom-12 left-0 right-0 flex justify-center grayscale opacity-40">
         <div className="flex items-center gap-10 md:gap-16 px-4 flex-wrap justify-center">
           {PARTNERS.map((partner) => (
             <span key={partner.name} className={`${partner.className} text-white/80`}>
