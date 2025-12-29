@@ -21,7 +21,7 @@ export default function EcosystemSection() {
   return (
     <section className="relative pt-32 pb-60 bg-white flex justify-center overflow-hidden">
       {/* Bottom Background Image */}
-      <div className="absolute bottom-0 left-0 right-0 h-[800px] w-full z-0 pointer-events-none">
+      <div className="absolute bottom-0 left-0 right-0 h-[450px] w-full z-0 pointer-events-none">
         <Image
           src="/images/ecosystem/ecosystem-bg.avif"
           alt="Ecosystem Background"
