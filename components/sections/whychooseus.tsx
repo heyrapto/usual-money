@@ -16,7 +16,7 @@ export default function WhyChooseUsSection() {
                 <span className="inline-block text-purple-500 font-medium mb-4">Why Usual</span>
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-tight mb-12 leading-tight">
-                    {WHY_CHOOSE_US_CONTENT.headline.prefix}{" "}
+                    {WHY_CHOOSE_US_CONTENT.headline.prefix}{" "} <br />
                     <span className="relative inline-block mx-2 text-gray-400 decoration-2 decoration-gray-400 line-through">
                         {WHY_CHOOSE_US_CONTENT.headline.strikethrough}
                     </span>{" "}

@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section className="relative pt-32 pb-40 overflow-hidden bg-black flex items-center justify-center">
       {/* Background Grid & Glow */}
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 opacity-[0.15]"
           style={{
@@ -16,7 +16,7 @@ export default function HeroSection() {
           }}
         />
         <div className="absolute top-[20%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full" />
-      </div>
+      </div> */}
 
       <div className="container relative z-10 mx-auto px-4 max-w-[1200px] mt-[150px]">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-0">
