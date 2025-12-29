@@ -5,7 +5,7 @@ import { RESOURCES_CONTENT } from "@/constants/resources";
 
 export default function ResourcesSection() {
     return (
-        <section className="bg-black py-32 text-white">
+        <section className="bg-black pb-32 pt-10 text-white">
             <div className="container mx-auto px-4 max-w-[1200px]">
                 {/* Header */}
                 <div className="text-center mb-20">

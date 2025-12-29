@@ -4,7 +4,7 @@ import { useState } from "react";
 import { FAQ_CONTENT } from "@/constants/faq";
 import Link from "next/link";
 import { BsArrowUpRight } from "react-icons/bs";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
 
 export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -14,7 +14,7 @@ export default function FAQSection() {
     };
 
     return (
-        <section className="bg-white py-32">
+        <section className="bg-white pb-[200px] pt-[400px]">
             <div className="container mx-auto px-4 max-w-[800px]">
                 {/* Header */}
                 <div className="text-center mb-16">
@@ -47,10 +47,24 @@ export default function FAQSection() {
                             </button>
 
                             <div
-                                className={`grid transition-all duration-300 ease-in-out ${openIndex === index ? "grid-rows-[1fr] opacity-100 pb-6" : "grid-rows-[0fr] opacity-0"
-                                    }`}
+                                className={`
+    grid overflow-hidden
+    transition-all duration-400 ease-out
+    ${openIndex === index
+                                        ? "grid-rows-[1fr] opacity-100 pb-6"
+                                        : "grid-rows-[0fr] opacity-0"
+                                    }
+  `}
                             >
-                                <div className="overflow-hidden">
+                                <div
+                                    className={`
+      transition-all duration-400 ease-out overflow-hidden
+      ${openIndex === index
+                                            ? "blur-0 translate-y-0"
+                                            : "blur-sm translate-y-1"
+                                        }
+    `}
+                                >
                                     <p className="text-gray-500 leading-relaxed text-xs md:text-base">
                                         {item.answer}
                                     </p>
@@ -61,10 +75,10 @@ export default function FAQSection() {
                 </div>
 
                 {/* Footer Link */}
-                <div className="mt-12 border-t border-gray-100 pt-8">
+                <div className="mt-0 border-t border-gray-100 pt-4">
                     <Link
                         href={FAQ_CONTENT.cta.href}
-                        className="flex items-center justify-between w-full text-black font-bold group hover:text-gray-600 transition-colors"
+                        className="flex items-center justify-between w-full text-black font-bold text-sm group hover:text-gray-600 transition-colors"
                     >
                         <span>{FAQ_CONTENT.cta.text}</span>
                         <BsArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />

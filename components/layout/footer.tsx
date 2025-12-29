@@ -10,8 +10,14 @@ export default function Footer() {
     <footer className="bg-black text-white py-20 relative overflow-hidden">
 
       {/* Large Background Text Effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1440px] pointer-events-none opacity-[0.03] select-none flex justify-center">
-        <span className="text-[15rem] md:text-[25rem] font-bold tracking-tighter leading-none whitespace-nowrap">USUAL</span>
+      {/* Large Background Image */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
+        <Image
+          src="/images/footer/footer-image.avif"
+          alt="USUAL Background"
+          fill
+          className="object-cover object-center"
+        />
       </div>
 
       <div className="container mx-auto px-4 max-w-[1200px] relative z-10">
