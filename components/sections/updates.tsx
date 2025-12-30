@@ -9,7 +9,7 @@ export default function UpdatesSection() {
             <div className="container mx-auto px-4 max-w-[1200px]">
                 {/* Header */}
                 <div className="text-center mb-20">
-                    <span className="inline-block text-purple-500 font-medium mb-4 uppercase tracking-wider text-sm">
+                    <span className="headline-gradient inline-block font-medium mb-4 uppercase tracking-wider text-sm">
                         {UPDATES_CONTENT.headline.category}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">

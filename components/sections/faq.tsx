@@ -18,7 +18,7 @@ export default function FAQSection() {
             <div className="container mx-auto px-4 max-w-[800px]">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <span className="inline-block text-purple-500 font-medium mb-4 uppercase tracking-wider text-sm">FAQ</span>
+                    <span className="headline-gradient inline-block font-medium mb-4 uppercase tracking-wider text-sm">FAQ</span>
                     <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tight mb-6">
                         {FAQ_CONTENT.headline.title}
                     </h2>

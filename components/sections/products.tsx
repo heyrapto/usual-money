@@ -29,7 +29,7 @@ export default function ProductsSection() {
 
                 {/* Header & Tabs */}
                 <div className="flex flex-col items-center text-center mb-16">
-                    <span className="text-[#a076f9] font-medium mb-4">{PRODUCTS_CONTENT.header.tag}</span>
+                    <span className="headline-gradient font-medium mb-4">{PRODUCTS_CONTENT.header.tag}</span>
                     <h2 className="text-4xl md:text-5xl font-bold mb-8 whitespace-pre-line tracking-tight leading-[1.1]">
                         {PRODUCTS_CONTENT.header.title}
                     </h2>
@@ -159,7 +159,7 @@ export default function ProductsSection() {
                 </div>
 
                 {/* Partners Section ("Built on Stability") */}
-                <div className="bg-[#0A0A0A] rounded-[3rem] p-8 md:p-16 border border-white/5 relative overflow-hidden h-[300px] -mt-16"> {/* Fixed height for scroll masking */}
+                <div className="bg-[#0A0A0A] rounded-[3rem] p-8 md:p-16 border border-white/5 relative overflow-hidden h-[300px] -mt-14"> {/* Fixed height for scroll masking */}
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10 h-full">
                         <div className="max-w-md h-full flex flex-col justify-center">
                             <h3 className="text-2xl md:text-3xl font-bold mb-4 whitespace-pre-line">
