@@ -34,6 +34,13 @@ export interface ProductStateContent {
     features: FeatureCard[];
 }
 
+export interface RevenueContent {
+    title: string;
+    description: string;
+    stats: { label: string; value: string; position: "left" | "right" }[];
+    centralImage: string;
+}
+
 export const PRODUCTS_CONTENT = {
     header: {
         tag: "Our products",
@@ -99,17 +106,17 @@ export const PRODUCTS_CONTENT = {
         },
         features: [
             {
-                icon: "/images/products/usdo/1.svg",
+                icon: "/images/products/usd/1.avif",
                 title: "Yield & Growth Combined",
                 description: "Usual goes beyond traditional stablecoins by aligning TVL providers with both yield and growth. Unlike Tether, Usual lets you benefit from the protocol's expansion."
             },
             {
-                icon: "/images/products/usdo/2.svg",
+                icon: "/images/products/usd/2.avif",
                 title: "Secondary Market Liquidity",
                 description: "bUSDO is fully liquid and transferable, allowing holders to exit their positions at any time by swapping bUSDO for other assets."
             },
             {
-                icon: "/images/products/usdo/3.svg",
+                icon: "/images/products/usd/3.avif",
                 title: "1:1 Early Unstaking",
                 description: "bUSDO maintains stable Protocol revenue and long-term value for $USUAL. Stay flexible and exit 1:1 by using rt-bUSDO (redemption token)."
             }
@@ -126,5 +133,18 @@ export const PRODUCTS_CONTENT = {
             { name: "ONDO", logo: "/images/products/ondo.svg" }
         ] as Partner[],
         bottomImage: "/images/products/bottom-handle-image.avif"
+    },
+
+    // Revenue Section (below partners)
+    revenue: {
+        title: "The Revenue-Based Token\nat the Heart of Usual",
+        description: "USUAL rewards adoption and usage, aligning incentives with contributors to fuel protocol growth. Its distribution introduces new DeFi primitives, ensuring rapid ecosystem scaling and sustainable decentralization.",
+        stats: [
+            { label: "USUALx APY", value: "99%", position: "left" },
+            { label: "4-Year Cash Flow", value: "$104.42M", position: "left" },
+            { label: "Staked Supply", value: "62.44%", position: "right" },
+            { label: "Burned Supply", value: "17.31%", position: "right" }
+        ],
+        centralImage: "/images/products/usd/2.avif" // Using this as it looks similar to the graphic in screenshot
     }
 };

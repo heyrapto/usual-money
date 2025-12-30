@@ -14,7 +14,7 @@ export default function ProductsSection() {
     const partnersList = [...PRODUCTS_CONTENT.partners.list, ...PRODUCTS_CONTENT.partners.list];
 
     return (
-        <section className="bg-black py-32 text-white relative overflow-hidden">
+        <section className="bg-[#080808] py-32 text-white relative overflow-hidden">
             <div className="container mx-auto px-4 max-w-[1200px] relative z-10">
 
                 {/* Header & Tabs */}
@@ -119,27 +119,37 @@ export default function ProductsSection() {
                 {/* Features Grid - Dynamic Content */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-0 relative z-10">
                     {currentContent.features.map((feature, i) => (
-                        <div key={i} className="bg-[#111] rounded-[2rem] p-8 border border-white/5 hover:border-white/10 transition-colors group min-h-[250px] flex flex-col justify-start">
-                            <div className="w-16 h-16 relative mb-6">
+                        <div key={i} className="flex flex-col items-center">
+                            <div className="bg-[#111] rounded-[2rem] p-8 border border-white/5 hover:border-white/10 transition-colors group h-[350px] flex flex-col justify-start w-full">
+                                <div className="w-30 h-30 relative mb-6">
+                                    <Image
+                                        src={feature.icon}
+                                        alt={feature.title}
+                                        fill
+                                        className="object-contain"
+                                    />
+                                </div>
+                                <h4 className="text-lg font-bold mb-3 group-hover:text-gray-200 transition-colors">{feature.title}</h4>
+                                <p className="text-gray-500 text-sm leading-relaxed">
+                                    {feature.description}
+                                </p>
+                            </div>
+
+                            {/* Handle below each card */}
+                            <div className="relative w-full h-64 -mt-14 pointer-events-none z-0">
                                 <Image
-                                    src={feature.icon}
-                                    alt={feature.title}
+                                    src={i === 0 ? "/images/products/left-image.avif" : i === 1 ? "/images/products/middle-image.avif" : "/images/products/right-image.avif"}
+                                    alt="connection handle"
                                     fill
                                     className="object-contain"
                                 />
                             </div>
-                            <h4 className="text-lg font-bold mb-3 group-hover:text-gray-200 transition-colors">{feature.title}</h4>
-                            <p className="text-gray-500 text-sm leading-relaxed">
-                                {feature.description}
-                            </p>
                         </div>
                     ))}
                 </div>
 
-
-
                 {/* Partners Section ("Built on Stability") */}
-                <div className="bg-[#0A0A0A] rounded-[3rem] p-8 md:p-16 border border-white/5 relative overflow-hidden h-[300px]"> {/* Fixed height for scroll masking */}
+                <div className="bg-[#0A0A0A] rounded-[3rem] p-8 md:p-16 border border-white/5 relative overflow-hidden min-h-[400px] -mt-16">
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10 h-full">
                         <div className="max-w-md h-full flex flex-col justify-center">
                             <h3 className="text-2xl md:text-3xl font-bold mb-4 whitespace-pre-line">
@@ -150,12 +160,12 @@ export default function ProductsSection() {
                             </p>
                         </div>
 
-                        <div className="w-full max-w-sm h-full relative overflow-hidden mask-vertical-fade">
-                            {/* Vertical Scrolling Container */}
-                            <div className="absolute top-0 left-0 w-full animate-scroll-vertical-fast flex flex-col gap-6">
+                        <div className="w-full max-w-sm relative">
+                            {/* Static List of Partners */}
+                            <div className="flex flex-col gap-8">
                                 {partnersList.map((partner, i) => (
-                                    <div key={i} className="flex items-center gap-4 group flex-shrink-0 h-[30px]"> {/* Fixed item height for consistent spacing */}
-                                        <div className="relative w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity">
+                                    <div key={i} className="flex items-center gap-6 group">
+                                        <div className="relative w-10 h-10 opacity-80 group-hover:opacity-100 transition-opacity">
                                             <Image
                                                 src={partner.logo}
                                                 alt={partner.name}
@@ -163,9 +173,9 @@ export default function ProductsSection() {
                                                 className="object-contain"
                                             />
                                         </div>
-                                        <span className="text-xl font-medium text-gray-300 group-hover:text-white transition-colors">{partner.name}</span>
+                                        <span className="text-3xl font-medium text-gray-300 group-hover:text-white transition-colors">{partner.name}</span>
                                         {partner.name === "ONDO" && (
-                                            <span className="bg-[#1A1A1A] border border-white/10 text-xs px-2 py-0.5 rounded-full text-gray-500 ml-auto">Coming soon</span>
+                                            <span className="bg-[#1A1A1A] border border-white/10 text-xs px-3 py-1 rounded-full text-gray-500 ml-auto whitespace-nowrap">Coming soon</span>
                                         )}
                                     </div>
                                 ))}
@@ -182,14 +192,86 @@ export default function ProductsSection() {
                     />
                 </div>
 
-                <div className="relative w-full h-[100px] md:h-[150px] flex justify-center -mt-0 -mb-0 pointer-events-none z-0">
-                    <div className="w-full max-w-[800px] h-full relative">
+                {/* Bottom Connection below Partners */}
+                <div className="relative w-full flex flex-col items-center pointer-events-none z-0">
+                    <div className="relative w-full max-w-5xl h-64">
                         <Image
-                            src={PRODUCTS_CONTENT.partners.bottomImage}
-                            alt="Connection"
+                            src="/images/products/bottom-handle-image.avif"
+                            alt="Bottom Branch"
                             fill
                             className="object-contain"
                         />
+                    </div>
+                </div>
+
+                {/* Revenue-Based Token Section */}
+                <div className="relative px-4 overflow-hidden ">
+                    {/* Background Grid & Pattern */}
+                    <div className="absolute inset-0 opacity-10 pointer-events-none">
+                        <div className="absolute inset-0"
+                            style={{
+                                backgroundImage: `radial-gradient(circle at center, rgba(160, 118, 249, 0.15) 0%, transparent 70%)`,
+                            }}
+                        />
+                        <div className="absolute inset-0"
+                            style={{
+                                backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
+                                backgroundSize: '40px 40px',
+                                perspective: '1000px',
+                                transform: 'rotateX(60deg) translateY(-100px)',
+                                transformOrigin: 'top'
+                            }}
+                        />
+                    </div>
+
+                    <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center text-center">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center w-full">
+
+                            {/* Left Stats */}
+                            <div className="flex flex-col gap-12 lg:text-right order-2 lg:order-1">
+                                {PRODUCTS_CONTENT.revenue.stats.filter(s => s.position === "left").map((stat, i) => (
+                                    <div key={stat.label} className="group cursor-default">
+                                        <span className="text-gray-500 text-sm uppercase tracking-[0.2em] mb-2 block">{stat.label}</span>
+                                        <span className="text-2xl font-bold text-white group-hover:text-[#a076f9] transition-colors">{stat.value}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Central Image/Graphic */}
+                            <div className="relative w-full aspect-square max-w-[400px] mx-auto order-1 lg:order-2">
+                                <div className="absolute inset-0 bg-[#a076f9]/20 blur-[100px] rounded-full animate-pulse" />
+                                <Image
+                                    src={PRODUCTS_CONTENT.revenue.centralImage}
+                                    alt="Revenue-Based Token"
+                                    fill
+                                    className="object-contain relative z-10"
+                                />
+                            </div>
+
+                            {/* Right Stats */}
+                            <div className="flex flex-col gap-12 lg:text-left order-3">
+                                {PRODUCTS_CONTENT.revenue.stats.filter(s => s.position === "right").map((stat, i) => (
+                                    <div key={stat.label} className="group cursor-default">
+                                        <span className="text-gray-500 text-sm uppercase tracking-[0.2em] mb-2 block">{stat.label}</span>
+                                        <span className="text-2xl font-bold text-white group-hover:text-[#a076f9] transition-colors">{stat.value}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Text Content Below */}
+                        <div className="mt-16 max-w-2xl mx-auto">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-6 whitespace-pre-line leading-tight">
+                                {PRODUCTS_CONTENT.revenue.title}
+                            </h2>
+                            <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-8">
+                                {PRODUCTS_CONTENT.revenue.description}
+                            </p>
+                            <a href="#" className="inline-flex items-center gap-2 text-white font-medium hover:gap-4 transition-all group">
+                                Learn more
+                                <span className="text-xl group-hover:translate-x-1 transition-transform">→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -208,6 +290,6 @@ export default function ProductsSection() {
                     animation: scroll-vertical 20s linear infinite;
                 }
             `}</style>
-        </section>
+        </section >
     );
 }
