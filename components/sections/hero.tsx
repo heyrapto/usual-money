@@ -1,23 +1,11 @@
-import { HERO_ICONS, PARTNERS } from "@/constants/hero";
+import { HERO_ICONS, HERO_STATS, PARTNERS } from "@/constants/hero";
 
 import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-32 pb-40 overflow-hidden bg-black flex items-center justify-center">
-      {/* Background Grid & Glow */}
-      {/* <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 opacity-[0.15]"
-          style={{
-            backgroundImage: `linear-gradient(to right, #444 1px, transparent 1px), linear-gradient(to bottom, #444 1px, transparent 1px)`,
-            backgroundSize: '40px 40px'
-          }}
-        />
-        <div className="absolute top-[20%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 blur-[120px] rounded-full" />
-      </div> */}
-
+    <section className="relative pt-[80px] pb-40 overflow-hidden bg-black flex items-center justify-center">
       <div className="container relative z-10 mx-auto px-4 max-w-[1200px] mt-[150px]">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-0">
           {/* Left Content */}
@@ -43,7 +31,7 @@ export default function HeroSection() {
               markets
             </h1>
             <p className="text-lg text-white/50  mb-12 leading-relaxed">
-              Echo AI connects directly to decentralized markets, enabling automated strategy deployment, real-time trade mirroring, and protocol-native yield generation. Built as an evolving AI ecosystem, Echo AI adapts to volatility, identifies opportunities, and routes capital across DeFi in real-time.
+              A decentralized AI that captures DeFi opportunities, automates strategies, and returns value to the community.
             </p>
 
             <Link
@@ -80,8 +68,37 @@ export default function HeroSection() {
                 priority
                 className="object-contain"
               />
+
+              {/* Overlayed Stats */}
+              <div className="absolute inset-0 pointer-events-none text-white font-medium">
+                {/* TVL */}
+                <div className="absolute top-[13%] left-[39%] text-xl font-bold">
+                  {HERO_STATS.tvl}
+                </div>
+
+                {/* Revenue */}
+                <div className="absolute top-[26%] left-[39%] text-sm">
+                  {HERO_STATS.revenue}
+                </div>
+
+                {/* Staking APY */}
+                <div className="absolute top-[40%] left-[39%] text-sm">
+                  {HERO_STATS.stakingApy}
+                </div>
+
+                {/* Locking APY */}
+                <div className="absolute top-[40%] left-[52%] text-sm">
+                  {HERO_STATS.lockingApy}
+                </div>
+
+                {/* Redistributed */}
+                <div className="absolute bottom-[40%] left-[37.5%] text-xs">
+                  {HERO_STATS.redistributed}
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 
