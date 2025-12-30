@@ -1,17 +1,44 @@
-
 "use client";
-
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { PRODUCTS_CONTENT } from "@/constants/products";
 
 export default function ProductsSection() {
     const [activeTab, setActiveTab] = useState("stablecoin");
     const [isUsdoPlus, setIsUsdoPlus] = useState(false);
+    const [scrollProgress, setScrollProgress] = useState(0);
+    const revenueRef = useRef<HTMLDivElement>(null);
+
     const currentContent = isUsdoPlus ? PRODUCTS_CONTENT.busdo : PRODUCTS_CONTENT.usdo;
 
     // Use duplicated list for seamless loop
     const partnersList = [...PRODUCTS_CONTENT.partners.list, ...PRODUCTS_CONTENT.partners.list];
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!revenueRef.current) return;
+
+            const rect = revenueRef.current.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+
+            // Start animating when the bottom of the section reaches the top of the viewport
+            // and end when the top of the section is at the center of the viewport
+            const sectionBottom = rect.bottom;
+            const sectionTop = rect.top;
+
+            // Progress goes from 0 to 1 as we scroll out (mostly at the end)
+            if (sectionTop < 0) {
+                // Starts animating only when section is 60% out of view
+                const progress = Math.min(Math.max((-sectionTop - rect.height * 0.6) / (rect.height * 0.4), 0), 1);
+                setScrollProgress(progress);
+            } else {
+                setScrollProgress(0);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <section className="bg-[#080808] py-32 text-white relative overflow-hidden">
@@ -149,7 +176,7 @@ export default function ProductsSection() {
                 </div>
 
                 {/* Partners Section ("Built on Stability") */}
-                <div className="bg-[#0A0A0A] rounded-[3rem] p-8 md:p-16 border border-white/5 relative overflow-hidden min-h-[400px] -mt-16">
+                <div className="bg-[#0A0A0A] rounded-[3rem] p-8 md:p-16 border border-white/5 relative overflow-hidden h-[300px] -mt-16"> {/* Fixed height for scroll masking */}
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-12 relative z-10 h-full">
                         <div className="max-w-md h-full flex flex-col justify-center">
                             <h3 className="text-2xl md:text-3xl font-bold mb-4 whitespace-pre-line">
@@ -160,12 +187,12 @@ export default function ProductsSection() {
                             </p>
                         </div>
 
-                        <div className="w-full max-w-sm relative">
-                            {/* Static List of Partners */}
-                            <div className="flex flex-col gap-8">
+                        <div className="w-full max-w-sm h-full relative overflow-hidden mask-vertical-fade">
+                            {/* Vertical Scrolling Container */}
+                            <div className="absolute top-0 left-0 w-full animate-scroll-vertical-fast flex flex-col gap-6 pb-6">
                                 {partnersList.map((partner, i) => (
-                                    <div key={i} className="flex items-center gap-6 group">
-                                        <div className="relative w-10 h-10 opacity-80 group-hover:opacity-100 transition-opacity">
+                                    <div key={i} className="flex items-center gap-4 group flex-shrink-0 h-[30px]"> {/* Fixed item height for consistent spacing */}
+                                        <div className="relative w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity">
                                             <Image
                                                 src={partner.logo}
                                                 alt={partner.name}
@@ -173,9 +200,9 @@ export default function ProductsSection() {
                                                 className="object-contain"
                                             />
                                         </div>
-                                        <span className="text-3xl font-medium text-gray-300 group-hover:text-white transition-colors">{partner.name}</span>
+                                        <span className="text-xl font-medium text-gray-300 group-hover:text-white transition-colors">{partner.name}</span>
                                         {partner.name === "ONDO" && (
-                                            <span className="bg-[#1A1A1A] border border-white/10 text-xs px-3 py-1 rounded-full text-gray-500 ml-auto whitespace-nowrap">Coming soon</span>
+                                            <span className="bg-[#1A1A1A] border border-white/10 text-xs px-2 py-0.5 rounded-full text-gray-500 ml-auto">Coming soon</span>
                                         )}
                                     </div>
                                 ))}
@@ -205,7 +232,7 @@ export default function ProductsSection() {
                 </div>
 
                 {/* Revenue-Based Token Section */}
-                <div className="relative px-4 overflow-hidden ">
+                <div ref={revenueRef} className="relative px-4 overflow-hidden ">
                     {/* Background Grid & Pattern */}
                     <div className="absolute inset-0 opacity-10 pointer-events-none">
                         <div className="absolute inset-0"
@@ -228,7 +255,13 @@ export default function ProductsSection() {
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center w-full">
 
                             {/* Left Stats */}
-                            <div className="flex flex-col gap-12 lg:text-right order-2 lg:order-1">
+                            <div
+                                className="flex flex-col gap-12 lg:text-right order-2 lg:order-1 transition-all duration-300 ease-out"
+                                style={{
+                                    transform: `translateX(-${scrollProgress * 150}px)`,
+                                    opacity: 1 - scrollProgress
+                                }}
+                            >
                                 {PRODUCTS_CONTENT.revenue.stats.filter(s => s.position === "left").map((stat, i) => (
                                     <div key={stat.label} className="group cursor-default">
                                         <span className="text-gray-500 text-sm uppercase tracking-[0.2em] mb-2 block">{stat.label}</span>
@@ -249,7 +282,13 @@ export default function ProductsSection() {
                             </div>
 
                             {/* Right Stats */}
-                            <div className="flex flex-col gap-12 lg:text-left order-3">
+                            <div
+                                className="flex flex-col gap-12 lg:text-left order-3 transition-all duration-300 ease-out"
+                                style={{
+                                    transform: `translateX(${scrollProgress * 150}px)`,
+                                    opacity: 1 - scrollProgress
+                                }}
+                            >
                                 {PRODUCTS_CONTENT.revenue.stats.filter(s => s.position === "right").map((stat, i) => (
                                     <div key={stat.label} className="group cursor-default">
                                         <span className="text-gray-500 text-sm uppercase tracking-[0.2em] mb-2 block">{stat.label}</span>
