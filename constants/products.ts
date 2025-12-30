@@ -43,9 +43,9 @@ export interface RevenueContent {
 
 export const PRODUCTS_CONTENT = {
     header: {
-        tag: "Our products",
-        title: "Building blocks \nof the new era",
-        description: "USDO for stability, USD0++ for growth, and $USUAL for governance and revenue-sharing, soon strengthened by yield optimizer, fixed rates, and fixed terms to deliver a unique range of products."
+        tag: "AI Simplified",
+        title: "Unlock autonomous trading \nwith intelligent on-chain \nexecution",
+        description: "Echo AI simplifies everything: select a strategy, choose size, and let the system manage entries, exits, risk exposure, and ongoing adjustments in real time."
     },
     tabs: [
         { id: "stablecoin", label: "Stablecoin", status: "active" },

@@ -23,9 +23,9 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="flex-1 max-w-[650px]">
             <h1 className="text-5xl lg:text-[3.3rem] font-bold text-white leading-[1.1] mb-8">
-              Redistributing <br />
-              the value monopolized <br />
-              by crypto{" "}
+              Autonomous <br />
+              trading Decentralized <br />
+              for crypto{" "}
               <span className="inline-flex items-center align-middle -mt-2">
                 <span className="relative flex items-center -space-x-4">
                   {HERO_ICONS.map((icon, idx) => (
@@ -40,12 +40,10 @@ export default function HeroSection() {
                   ))}
                 </span>
               </span>{" "}
-              giants
+              markets
             </h1>
             <p className="text-lg text-white/50  mb-12 leading-relaxed">
-              A secure, decentralized issuer that takes back the value captured
-              by crypto giants, and redistributes it to the community through
-              $USUAL.
+              Echo AI connects directly to decentralized markets, enabling automated strategy deployment, real-time trade mirroring, and protocol-native yield generation. Built as an evolving AI ecosystem, Echo AI adapts to volatility, identifies opportunities, and routes capital across DeFi in real-time.
             </p>
 
             <Link
