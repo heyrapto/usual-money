@@ -15,3 +15,12 @@ export const PARTNERS = [
     { name: "I ECHO", className: "text-2xl font-black shrink-0" },
     { name: "WINTERMUTE", className: "text-xl font-bold tracking-tighter" },
 ];
+
+export const HERO_STATS = {
+    tvl: "$563,194,359",
+    revenue: "$26.27M",
+    stakingApy: "13%",
+    lockingApy: "89%",
+    redistributed: "$20.21M",
+    auditedCount: "20"
+};

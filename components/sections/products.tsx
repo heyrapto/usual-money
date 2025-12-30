@@ -1,12 +1,12 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { PRODUCTS_CONTENT } from "@/constants/products";
 
 export default function ProductsSection() {
     const [activeTab, setActiveTab] = useState("stablecoin");
     const [isUsdoPlus, setIsUsdoPlus] = useState(false);
-    const [scrollProgress, setScrollProgress] = useState(0);
     const revenueRef = useRef<HTMLDivElement>(null);
 
     const currentContent = isUsdoPlus ? PRODUCTS_CONTENT.busdo : PRODUCTS_CONTENT.usdo;
@@ -14,31 +14,14 @@ export default function ProductsSection() {
     // Use duplicated list for seamless loop
     const partnersList = [...PRODUCTS_CONTENT.partners.list, ...PRODUCTS_CONTENT.partners.list];
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!revenueRef.current) return;
+    const { scrollYProgress } = useScroll({
+        target: revenueRef,
+        offset: ["start start", "end start"]
+    });
 
-            const rect = revenueRef.current.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-
-            // Start animating when the bottom of the section reaches the top of the viewport
-            // and end when the top of the section is at the center of the viewport
-            const sectionBottom = rect.bottom;
-            const sectionTop = rect.top;
-
-            // Progress goes from 0 to 1 as we scroll out (mostly at the end)
-            if (sectionTop < 0) {
-                // Starts animating only when section is 60% out of view
-                const progress = Math.min(Math.max((-sectionTop - rect.height * 0.6) / (rect.height * 0.4), 0), 1);
-                setScrollProgress(progress);
-            } else {
-                setScrollProgress(0);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const xLeft = useTransform(scrollYProgress, [0.4, 1], [0, -200]);
+    const xRight = useTransform(scrollYProgress, [0.4, 1], [0, 200]);
+    const opacity = useTransform(scrollYProgress, [0.4, 0.9], [1, 0]);
 
     return (
         <section className="bg-[#080808] py-32 text-white relative overflow-hidden">
@@ -255,11 +238,11 @@ export default function ProductsSection() {
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center w-full">
 
                             {/* Left Stats */}
-                            <div
-                                className="flex flex-col gap-12 lg:text-right order-2 lg:order-1 transition-all duration-300 ease-out"
+                            <motion.div
+                                className="flex flex-col gap-12 lg:text-right order-2 lg:order-1"
                                 style={{
-                                    transform: `translateX(-${scrollProgress * 150}px)`,
-                                    opacity: 1 - scrollProgress
+                                    x: xLeft,
+                                    opacity
                                 }}
                             >
                                 {PRODUCTS_CONTENT.revenue.stats.filter(s => s.position === "left").map((stat, i) => (
@@ -268,7 +251,7 @@ export default function ProductsSection() {
                                         <span className="text-2xl font-bold text-white group-hover:text-[#a076f9] transition-colors">{stat.value}</span>
                                     </div>
                                 ))}
-                            </div>
+                            </motion.div>
 
                             {/* Central Image/Graphic */}
                             <div className="relative w-full aspect-square max-w-[400px] mx-auto order-1 lg:order-2">
@@ -282,11 +265,11 @@ export default function ProductsSection() {
                             </div>
 
                             {/* Right Stats */}
-                            <div
-                                className="flex flex-col gap-12 lg:text-left order-3 transition-all duration-300 ease-out"
+                            <motion.div
+                                className="flex flex-col gap-12 lg:text-left order-3"
                                 style={{
-                                    transform: `translateX(${scrollProgress * 150}px)`,
-                                    opacity: 1 - scrollProgress
+                                    x: xRight,
+                                    opacity
                                 }}
                             >
                                 {PRODUCTS_CONTENT.revenue.stats.filter(s => s.position === "right").map((stat, i) => (
@@ -295,7 +278,7 @@ export default function ProductsSection() {
                                         <span className="text-2xl font-bold text-white group-hover:text-[#a076f9] transition-colors">{stat.value}</span>
                                     </div>
                                 ))}
-                            </div>
+                            </motion.div>
                         </div>
 
                         {/* Text Content Below */}
