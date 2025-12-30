@@ -14,7 +14,7 @@ export default function FAQSection() {
     };
 
     return (
-        <section className="bg-white pb-[200px] pt-[400px]">
+        <section className="bg-white pb-[200px] pt-[500px]">
             <div className="container mx-auto px-4 max-w-[800px]">
                 {/* Header */}
                 <div className="text-center mb-16">

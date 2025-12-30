@@ -136,17 +136,7 @@ export default function ProductsSection() {
                     ))}
                 </div>
 
-                {/* Connecting Handle */}
-                <div className="relative w-full h-[100px] md:h-[150px] flex justify-center -mt-6 -mb-6 pointer-events-none z-0">
-                    <div className="w-full max-w-[800px] h-full relative opacity-50">
-                        <Image
-                            src={PRODUCTS_CONTENT.partners.bottomImage}
-                            alt="Connection"
-                            fill
-                            className="object-contain"
-                        />
-                    </div>
-                </div>
+
 
                 {/* Partners Section ("Built on Stability") */}
                 <div className="bg-[#0A0A0A] rounded-[3rem] p-8 md:p-16 border border-white/5 relative overflow-hidden h-[300px]"> {/* Fixed height for scroll masking */}
@@ -190,6 +180,17 @@ export default function ProductsSection() {
                             backgroundSize: "30px 30px"
                         }}
                     />
+                </div>
+
+                <div className="relative w-full h-[100px] md:h-[150px] flex justify-center -mt-0 -mb-0 pointer-events-none z-0">
+                    <div className="w-full max-w-[800px] h-full relative">
+                        <Image
+                            src={PRODUCTS_CONTENT.partners.bottomImage}
+                            alt="Connection"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
                 </div>
 
             </div>

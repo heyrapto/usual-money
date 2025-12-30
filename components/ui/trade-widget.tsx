@@ -7,7 +7,7 @@ import { MdVerifiedUser } from "react-icons/md";
 
 export default function TradeWidget() {
   return (
-    <div className="w-full flex justify-center pb-32 pt-10 -mb-80 relative z-20 pointer-events-none">
+    <div className="w-full flex justify-center pb-32 pt-10 -mb-[500px] relative z-20 pointer-events-none">
       <div className="flex flex-col lg:flex-row gap-6 max-w-[1200px] w-full px-4 items-stretch justify-center pointer-events-auto">
 
         {/* Left Card: Swap */}
@@ -93,13 +93,16 @@ export default function TradeWidget() {
         <div className="w-full lg:w-1/2 bg-white rounded-3xl p-8 shadow-xl border border-gray-100 flex flex-col justify-between items-center relative overflow-visible">
 
           {/* Illustration */}
-          <div className="absolute -top-20 right-0 w-[80%] h-[200px] mt-4 mb-8">
-            <Image
-              src={TRADE_CONTENT.approve.image}
-              alt="Approval Illustration"
-              fill
-              className="object-contain"
-            />
+          <div className="relative w-full h-[240px] flex justify-center overflow-visible">
+            <div className="absolute top-[-200px] right-[-30px] w-[520px] h-[520px]">
+              <Image
+                src={TRADE_CONTENT.approve.image}
+                alt="Approval Illustration"
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
           </div>
 
           {/* Steps */}
@@ -112,10 +115,10 @@ export default function TradeWidget() {
                 </div>
               </div>
 
-              <div className="w-32 h-[1px] bg-gray-200 border-t border-dashed border-gray-300 relative top-[-10px]"></div>
+              <div className="w-16 h-[1px] bg-gray-400 border-t border-dashed border-gray-300 relative top-[20px]"></div>
 
               <div className="flex flex-col items-center gap-3">
-                <span className="text-gray-300">Confirm transaction</span>
+                <span className="text-gray-400">Confirm transaction</span>
                 <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-300">
                   <LuArrowDownUp size={16} />
                 </div>
@@ -135,19 +138,13 @@ export default function TradeWidget() {
             {/* Button */}
             <div className="relative mt-10">
               {/* "Try me" arrow text */}
-              <div className="absolute -top-10 left-0 hidden md:flex items-end gap-2 text-xs text-gray-400 italic font-handwriting transform -rotate-12 translate-x-4">
-                <span>Try me</span>
-                <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform rotate-90 translate-y-4">
-                  <path d="M10 10 C 20 20, 40 20, 40 40" stroke="currentColor" strokeWidth="1.5" fill="none" markerEnd="url(#arrowhead)" />
-                  <defs>
-                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                      <polygon points="0 0, 10 3.5, 0 7" fill="currentColor" />
-                    </marker>
-                  </defs>
-                </svg>
+              <div className="absolute -top-10 left-30 hidden md:flex items-end gap-2 text-xs text-gray-400 italic font-handwriting transform -rotate-12 translate-x-4">
+                <span className="">Try me</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" color="var(--token-85e1c2c5-0541-4beb-a44c-aa062612defb, rgb(153, 151, 164))">
+                  <g color="var(--token-85e1c2c5-0541-4beb-a44c-aa062612defb, rgb(153, 151, 164))"><path d="M240,88v64a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h44.6l-22.36-22.21A88,88,0,0,0,40,184a8,8,0,0,1-16,0,104,104,0,0,1,177.54-73.54L224,132.77V88a8,8,0,0,1,16,0Z"></path></g></svg>
               </div>
 
-              <button className="w-fit bg-[#1A1A1A] text-white text-sm py-4 rounded-full mx-auto px-3 flex items-center justify-center gap-2 hover:bg-black transition-colors group">
+              <button className="w-fit bg-[#1A1A1A] text-white text-sm py-2 rounded-full mx-auto px-3 flex items-center justify-center gap-2 hover:bg-black transition-colors group">
                 One-time Approval <FiChevronUp className="group-hover:-translate-y-1 transition-transform" />
               </button>
             </div>
