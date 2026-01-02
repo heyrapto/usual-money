@@ -1,9 +1,8 @@
 export const FOOTER_CONTENT = {
     columns: [
         {
-            title: "Usual",
+            title: "Echo",
             links: [
-                { label: "Careers", href: "#" },
                 { label: "Blog", href: "#" },
                 { label: "Contact", href: "#" },
             ]
@@ -18,33 +17,16 @@ export const FOOTER_CONTENT = {
             ]
         },
         {
-            title: "Ecosystem",
-            links: [
-                { label: "Ecosystem", href: "#" },
-                { label: "Build with us", href: "#" },
-                { label: "Bug Bounty", href: "#" },
-            ]
-        },
-        {
             title: "Resources",
             links: [
                 { label: "Documentation", href: "#" },
-                { label: "Audits", href: "#" },
                 { label: "Risk Policy", href: "#" },
                 { label: "Brand Kit", href: "#" },
             ]
         },
-        {
-            title: "Transparency",
-            links: [
-                { label: "Dune Analytics", href: "#" },
-                { label: "Token Terminal", href: "#" },
-                { label: "RWA.xyz", href: "#" },
-            ]
-        }
     ],
     bottom: {
-        copyright: "© 2025 Usual",
+        copyright: "© 2025 Echo",
         links: [
             { label: "Terms", href: "#" },
             { label: "Privacy Policy", href: "#" },

@@ -13,7 +13,7 @@ export default function WhyChooseUsSection() {
             />
 
             <div className="container relative z-10 mx-auto px-4 max-w-[900px] text-center">
-                <span className="headline-gradient inline-block font-medium mb-4">Why Usual</span>
+                <span className="headline-gradient inline-block font-medium mb-4">Why Echo</span>
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-tight mb-12 leading-tight">
                     {WHY_CHOOSE_US_CONTENT.headline.prefix}{" "} <br />
@@ -39,7 +39,7 @@ export default function WhyChooseUsSection() {
                         <div className="h-6 w-6 rounded-full border-2 border-black flex items-center justify-center">
                             <div className="h-4 w-4 rounded-full border border-black/30 border-t-black animate-[spin_3s_linear_infinite]" />
                         </div>
-                        <span className="text-xl font-bold tracking-widest text-black uppercase">Usual</span>
+                        <span className="text-xl font-bold tracking-widest text-black uppercase">Echo</span>
                     </div>
                 </div>
             </div>

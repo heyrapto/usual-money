@@ -6,7 +6,7 @@ export const NAV_LINKS = [
 
 export const DROPDOWN_SECTIONS = [
     {
-        title: "Usual",
+        title: "Echo",
         links: [
             { label: "App", href: "/app" },
             { label: "Careers", href: "/careers" },
