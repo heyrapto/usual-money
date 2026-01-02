@@ -2,18 +2,18 @@ export const UPDATES_CONTENT = {
     headline: {
         category: "Updates",
         title: "What's New",
-        description: "Continuous improvements and new features, each release brings a better experience. Stay informed with the latest updates.",
+        description: "Ongoing improvements and feature releases, each update enhances performance, automation, and on-chain execution. Stay informed with the latest changes.",
     },
     featured: [
         {
-            title: "New Asset: EURO Is Live",
+            title: "Autonomous Trading Goes Live",
             date: "October 17, 2025",
             image: "/images/updates/1.avif",
             link: "#",
             isLarge: false
         },
         {
-            title: "Syrup Vault Now Live",
+            title: "AI Strategy Vaults Released",
             date: "July 10, 2025",
             image: "/images/updates/2.avif",
             link: "#",
@@ -22,12 +22,12 @@ export const UPDATES_CONTENT = {
     ],
     list: [
         {
-            title: "USUALx Locking Is Live",
+            title: "Smart Money Mirroring Enabled",
             date: "July 7, 2025",
             link: "#"
         },
         {
-            title: "Euler PT-USD0++ vault",
+            title: "Perpetuals Execution Upgrade",
             date: "June 26, 2025",
             link: "#"
         }

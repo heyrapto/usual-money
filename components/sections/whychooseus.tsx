@@ -13,7 +13,7 @@ export default function WhyChooseUsSection() {
             />
 
             <div className="container relative z-10 mx-auto px-4 max-w-[900px] text-center">
-                <span className="inline-block text-purple-500 font-medium mb-4">Why Usual</span>
+                <span className="headline-gradient inline-block font-medium mb-4">Why Usual</span>
 
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black tracking-tight mb-12 leading-tight">
                     {WHY_CHOOSE_US_CONTENT.headline.prefix}{" "} <br />

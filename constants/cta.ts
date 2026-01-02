@@ -1,14 +1,14 @@
 export const CTA_CONTENT = {
     headline: {
-        title: "Governed by you and +10,000 more stakers",
-        description: "Make key decisions to guide Usual's protocol, community, and broader ecosystem.",
-        linkText: "See more proposals",
+        title: "Echo AI Early Access Program",
+        description: "Join early and secure exclusive access to advanced strategies, analytics features, and protocol rewards.",
+        linkText: "Participate",
         linkHref: "#"
     },
     card: {
-        tag: "UIP-15",
-        title: "Settle, Clarify, Transfer",
-        status: "In progress",
+        tag: "Early Access",
+        title: "Autonomous Trading Starts Here",
+        status: "Live",
         image: "/images/cta/cta-image.avif"
     }
 };

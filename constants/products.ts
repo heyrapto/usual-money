@@ -43,89 +43,89 @@ export interface RevenueContent {
 
 export const PRODUCTS_CONTENT = {
     header: {
-        tag: "Our products",
-        title: "Building blocks \nof the new era",
-        description: "USDO for stability, USD0++ for growth, and $USUAL for governance and revenue-sharing, soon strengthened by yield optimizer, fixed rates, and fixed terms to deliver a unique range of products."
+        tag: "AI Simplified",
+        title: "Unlock autonomous trading \nwith intelligent on-chain \nexecution",
+        description: "Echo AI simplifies everything: select a strategy, choose size, and let the system manage entries, exits, risk exposure, and ongoing adjustments in real time."
     },
     tabs: [
-        { id: "stablecoin", label: "Stablecoin", status: "active" },
-        { id: "yield", label: "Yield Optimizer", status: "coming soon" },
-        { id: "rates", label: "Fixed Rates", status: "coming soon" },
-        { id: "terms", label: "Fixed Terms", status: "coming soon" }
+        { id: "stablecoin", label: "Strategies", status: "active" },
+        { id: "yield", label: "AI Vaults", status: "coming soon" },
+        { id: "rates", label: "Perpetuals", status: "coming soon" },
+        { id: "terms", label: "Infrastructure", status: "coming soon" }
     ] as ProductTab[],
 
-    // USDO State
+    // Strategy State
     usdo: {
         mainCard: {
-            title: "USDO, The Ultimate Fiat Stablecoin",
-            description: "The world's first RWA stablecoin that aggregates various US Treasury Bill tokens, providing a secure & permissionless bankruptcy-remote solution unlinked to traditional bank deposits.",
+            title: "Autonomous On-Chain Trading",
+            description: "AI-driven trading strategies that deploy directly on decentralized markets, adapting to volatility, liquidity, and on-chain behavior without manual intervention.",
             stats: [
-                { label: "TVL", value: "$543.79M" },
-                { label: "% Collateralization", value: "100.88%" }
+                { label: "Active Strategies", value: "24+" },
+                { label: "Execution Mode", value: "Fully On-Chain" }
             ],
             image: "/images/products/usd/1.avif"
         },
         greenCard: {
-            title: "Supercharge USDO",
-            description: "Toggle to discover bUSDO, a liquid staking version of USDO, acting like a savings account for Real-World Assets with a 4-year lock-up."
+            title: "One-Click Strategy Deployment",
+            description: "Select a strategy, define size, and let Echo AI handle execution, risk management, and continuous optimization automatically."
         },
         features: [
             {
                 icon: "/images/products/usdo/1.svg",
-                title: "Efficient & Composable",
-                description: "Backed 1:1, USDO is transferable, permissionless, and seamlessly integrates into DeFi and CeFi for maximum efficiency."
+                title: "Adaptive Strategy Engine",
+                description: "Strategies continuously learn from market volatility, liquidity depth, and trader behavior to optimize execution in real time."
             },
             {
                 icon: "/images/products/usdo/2.svg",
-                title: "Fully Collateralized",
-                description: "USDO is fully collateralized by diversified short-term T-Bills, eliminating the fractional reserve risks of traditional fiat-backed stablecoins."
+                title: "Smart Money Mirroring",
+                description: "Track and replicate whale wallets, high-performance traders, and winning on-chain flows across decentralized markets."
             },
             {
                 icon: "/images/products/usdo/3.svg",
-                title: "Safe and Insured",
-                description: "Although backed by solid, liquid assets, USDO is also protected by an insurance fund, funded by protocol revenue, to shield holders in a systemic crisis."
+                title: "Risk-Aware Automation",
+                description: "Built-in controls dynamically manage exposure, position sizing, and exits to protect capital during adverse conditions."
             }
         ]
     } as ProductStateContent,
 
-    // bUSDO (USD0++) State
+    // AI Vaults State
     busdo: {
         mainCard: {
-            title: "bUSDO, The LST for Real World Assets",
-            description: "bUSDO is the liquid staking version of USDO, acting as a savings account for RWA with a 4-year lock-up. It remains transferable while offering $USUAL rewards to drive USDO adoption.",
+            title: "AI-Managed Trading Vaults",
+            description: "Diversified vaults powered by multiple AI strategies, automatically reallocating capital across opportunities to balance risk and performance.",
             stats: [
-                { label: "4-Year Cash Flow", value: "$104.40M" },
-                { label: "APY", value: "3.32%" }
+                { label: "Supported Markets", value: "15+" },
+                { label: "Optimization Cycle", value: "Continuous" }
             ],
             image: "/images/products/usd/2.avif"
         },
         greenCard: {
-            title: "Boosted Yield Activated!",
-            description: "Toggle to learn more on USDO, an RWA stablecoin aggregating US Treasury Bill tokens, unlinked to traditional bank deposits.",
+            title: "Always Optimized",
+            description: "Capital is dynamically routed between strategies and markets based on performance, volatility, and liquidity conditions.",
             backgroundImage: "/images/products/boosted-bg.avif"
         },
         features: [
             {
                 icon: "/images/products/usd/1.avif",
-                title: "Yield & Growth Combined",
-                description: "Usual goes beyond traditional stablecoins by aligning TVL providers with both yield and growth. Unlike Tether, Usual lets you benefit from the protocol's expansion."
+                title: "Multi-Strategy Exposure",
+                description: "Access momentum, arbitrage, funding-rate neutral, and volatility-adaptive strategies within a single automated vault."
             },
             {
                 icon: "/images/products/usd/2.avif",
-                title: "Secondary Market Liquidity",
-                description: "bUSDO is fully liquid and transferable, allowing holders to exit their positions at any time by swapping bUSDO for other assets."
+                title: "Continuous Rebalancing",
+                description: "Vault allocations adjust automatically using AI signals to maintain optimal risk-adjusted returns."
             },
             {
                 icon: "/images/products/usd/3.avif",
-                title: "1:1 Early Unstaking",
-                description: "bUSDO maintains stable Protocol revenue and long-term value for $USUAL. Stay flexible and exit 1:1 by using rt-bUSDO (redemption token)."
+                title: "Non-Custodial Execution",
+                description: "Funds remain fully on-chain and under user control, ensuring transparency, security, and permissionless access."
             }
         ]
     } as ProductStateContent,
 
     partners: {
-        title: "Built on Stability.\nSecured by AA-Grade Assets.",
-        description: "Backed by high-quality, revenue-generating assets, ensuring stability, security, and sustainable yield.",
+        title: "Powered by DeFi.\nIntegrated Across Ecosystems.",
+        description: "Built with leading infrastructure, execution layers, and oracle providers to ensure reliable automation and real-time intelligence.",
         list: [
             { name: "USYC", logo: "/images/products/usyc.svg" },
             { name: "MO", logo: "/images/products/mo.svg" },
@@ -135,16 +135,16 @@ export const PRODUCTS_CONTENT = {
         bottomImage: "/images/products/bottom-handle-image.avif"
     },
 
-    // Revenue Section (below partners)
+    // Intelligence Section
     revenue: {
-        title: "The Revenue-Based Token\nat the Heart of Usual",
-        description: "USUAL rewards adoption and usage, aligning incentives with contributors to fuel protocol growth. Its distribution introduces new DeFi primitives, ensuring rapid ecosystem scaling and sustainable decentralization.",
+        title: "The Intelligence Layer\nBehind Echo AI",
+        description: "Echo AI aligns users, strategies, and protocols through autonomous execution, performance analytics, and on-chain transparency.",
         stats: [
-            { label: "USUALx APY", value: "99%", position: "left" },
-            { label: "4-Year Cash Flow", value: "$104.42M", position: "left" },
-            { label: "Staked Supply", value: "62.44%", position: "right" },
-            { label: "Burned Supply", value: "17.31%", position: "right" }
+            { label: "Strategy Uptime", value: "99.9%", position: "left" },
+            { label: "Markets Monitored", value: "1,000+", position: "left" },
+            { label: "On-Chain Execution", value: "Native", position: "right" },
+            { label: "Transparency", value: "100%", position: "right" }
         ],
-        centralImage: "/images/products/usd/2.avif" // Using this as it looks similar to the graphic in screenshot
+        centralImage: "/images/products/usd/2.avif"
     }
 };

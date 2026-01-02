@@ -1,28 +1,28 @@
 export const RESOURCES_CONTENT = {
     headline: {
         category: "Resources",
-        title: "Beyond the Usual",
-        description: "A comprehensive collection of resources to help you navigate and thrive within the Usual protocol.",
+        title: "Beyond Automation",
+        description: "A curated collection of resources to help you understand, deploy, and optimize autonomous trading with Echo AI.",
     },
     cards: [
         {
             title: "Documentation",
-            description: "Explore Usual's Gitbook for all details on the protocol",
-            linkText: "Explore Gitbook",
+            description: "Explore Echo AI documentation for details on strategies, vaults, and on-chain execution.",
+            linkText: "Explore Docs",
             linkHref: "#",
             image: "/images/resources/1.avif"
         },
         {
             title: "Blog",
-            description: "Discover the latest updates and plans from the Usual Labs.",
-            linkText: "Get updates",
+            description: "Stay updated with product releases, research insights, and ecosystem announcements from Echo AI.",
+            linkText: "Read Updates",
             linkHref: "#",
             image: "/images/resources/2.avif"
         },
         {
             title: "Community",
-            description: "Connect with more Usual enthusiasts.",
-            linkText: "Join Discord",
+            description: "Join the Echo AI community to connect with traders, builders, and protocol contributors.",
+            linkText: "Join Community",
             linkHref: "#",
             image: "/images/resources/3.avif"
         }

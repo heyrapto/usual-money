@@ -8,9 +8,6 @@ import { SiSubstack, SiGitbook } from "react-icons/si";
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-20 relative overflow-hidden">
-
-      {/* Large Background Text Effect */}
-      {/* Large Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
         <Image
           src="/images/footer/footer-image.avif"

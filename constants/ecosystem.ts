@@ -1,65 +1,65 @@
 export const ECOSYSTEM_CONTENT = {
     headline: {
         category: "Ecosystem",
-        title: "Usual Everywhere",
-        description: "We partner with the best platforms and ecosystems in DeFi to unlock the full potential of USD0++ and USUAL.",
+        title: "Echo Everywhere",
+        description: "We collaborate with leading platforms and infrastructure providers across DeFi to enable autonomous trading, execution, and data intelligence.",
     },
     cards: [
         {
             category: "CEXs",
             name: "Binance",
-            description: "Binance is the largest cryptocurrency exchange by trading volume, serving 185M+ users across 180+ countries.",
+            description: "Binance is a global cryptocurrency exchange providing deep liquidity and trading infrastructure across multiple markets.",
             image: "/images/ecosystem/binance-b.png",
             isPng: true,
         },
         {
             category: "CEXs",
             name: "Coinbase",
-            description: "Coinbase is a secure online platform for buying, selling, transferring, and storing cryptocurrency.",
+            description: "Coinbase is a trusted digital asset platform offering secure access to crypto markets and on-chain services.",
             image: "/images/ecosystem/coinbase-c.avif",
-            isPng: false, // assuming avif works fine
+            isPng: false,
         },
         {
             category: "Money Markets",
             name: "Morpho",
-            description: "A permissionless, non-custodial protocol for earning interest and borrowing on immutable infrastructure.",
+            description: "A permissionless, non-custodial protocol enabling efficient capital deployment and lending across DeFi.",
             image: "/images/ecosystem/morpho-m.avif",
             isPng: false,
         },
         {
             category: "Money Markets",
             name: "Euler",
-            description: "Euler is a modular lending platform that enables users to lend, borrow and build without limits.",
+            description: "Euler is a modular lending platform supporting advanced risk management and capital efficiency.",
             image: "/images/ecosystem/euler-e.avif",
             isPng: false,
         },
         {
             category: "DEXs",
             name: "Curve",
-            description: "Creating deep on-chain liquidity using advanced bonding curves.",
+            description: "An on-chain liquidity protocol optimized for efficient swaps and deep liquidity environments.",
             image: "/images/ecosystem/curve-c.avif",
             isPng: false,
         },
         {
             category: "Yield",
             name: "Pendle",
-            description: "Pendle is a DeFi protocol focused on yield trading, allowing users to both fix or leveraged yield.",
+            description: "Pendle enables tokenized yield strategies, supporting fixed, variable, and leveraged yield positions.",
             image: "/images/ecosystem/pendle-p.avif",
             isPng: false,
         },
         {
             category: "Bridge Oracle",
             name: "Chainlink",
-            description: "Chainlink is a decentralized oracle network connecting smart contracts to off-chain data.",
-            image: null, // No image in list, use icon in component
+            description: "Chainlink provides decentralized oracle infrastructure delivering reliable data feeds for on-chain execution.",
+            image: null,
             icon: "chainlink",
             isPng: false,
         },
         {
             category: "Bridge",
             name: "LayerZero",
-            description: "LayerZero is a trustless omnichain protocol enabling seamless cross-chain communication.",
-            image: null, // No image in list, use icon in component
+            description: "LayerZero enables secure omnichain messaging and cross-chain interoperability across ecosystems.",
+            image: null,
             icon: "layerzero",
             isPng: false,
         },
@@ -67,20 +67,20 @@ export const ECOSYSTEM_CONTENT = {
     stats: [
         {
             value: "+30",
-            label: "Integrated Projects",
+            label: "Integrated Protocols",
             icons: ["curve", "morpho", "euler"],
             extra: "+27",
         },
         {
             value: "4",
-            label: "Supported Chains",
-            icons: ["eth", "arbitrum", "base", "blast"], // check valid react-icons for these
+            label: "Supported Networks",
+            icons: ["eth", "arbitrum", "base", "blast"],
             extra: null,
         },
         {
             value: "+80",
-            label: "Yield Opportunities",
-            badges: ["Vault", "Liquidity Provider"],
+            label: "Execution Opportunities",
+            badges: ["Strategies", "Vaults"],
             extra: "+3",
         },
     ],

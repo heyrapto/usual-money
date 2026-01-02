@@ -36,7 +36,7 @@ export default function EcosystemSection() {
       <div className="container relative z-10 mx-auto px-4 max-w-[1200px]">
         {/* Header */}
         <div className="text-center mb-20 max-w-[600px] mx-auto">
-          <span className="inline-block text-purple-500 font-medium mb-4">{ECOSYSTEM_CONTENT.headline.category}</span>
+          <span className="headline-gradient inline-block font-medium mb-4">{ECOSYSTEM_CONTENT.headline.category}</span>
           <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tight mb-6">
             {ECOSYSTEM_CONTENT.headline.title}
           </h2>
