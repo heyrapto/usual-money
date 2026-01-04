@@ -17,10 +17,10 @@ export default function Home() {
       <HeroSection />
       <WhyChooseUsSection />
       <ProductsSection />
-      <EcosystemSection />
+      {/* <EcosystemSection /> */}
       <UpdatesSection />
       <ResourcesSection />
-      <TradeWidget />
+      {/* <TradeWidget /> */}
       <FAQSection />
       <CTASection />
       <Footer />

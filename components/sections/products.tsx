@@ -113,18 +113,18 @@ export default function ProductsSection() {
                                 onClick={() => setIsUsdoPlus(!isUsdoPlus)}
                             >
                                 <div
-                                    className={`absolute top-1 bottom-1  bg-white/10 rounded-full transition-transform duration-300 ease-out ${isUsdoPlus ? "translate-x-[112px] w-[80px]" : "translate-x-0 w-[110px]"
+                                    className={`absolute top-1 bottom-1  bg-white/10 rounded-full transition-transform duration-300 ease-out ${isUsdoPlus ? "translate-x-[112px] w-[80px]" : "translate-x-0 w-27.5"
                                         }`}
                                 />
                                 <span
-                                    className={`relative z-10 px-6 py-2 text-[10px] font-bold tracking-wider transition-colors duration-300 ${!isUsdoPlus ? "text-white" : "text-gray-500"
+                                    className={`relative z-10 px-6 py-2 text-[10px] font-bold tracking-wider transition-colors duration-300 cursor-pointer ${!isUsdoPlus ? "text-white" : "text-gray-500"
                                         }`}
                                 >
                                     STRATEGY
                                 </span>
 
                                 <span
-                                    className={`relative z-10 px-6 py-2 text-[10px] font-bold tracking-wider transition-colors duration-300 ${isUsdoPlus ? "text-white" : "text-gray-500"
+                                    className={`relative z-10 px-6 py-2 text-[10px] font-bold tracking-wider transition-colors duration-300 cursor-pointer ${isUsdoPlus ? "text-white" : "text-gray-500"
                                         }`}
                                 >
                                     AI VAULT
